@@ -1,0 +1,14 @@
+{
+ "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+ "name": "net.tnapplianceexchange/repair",
+ "title": "TN Appliance Exchange — appliance repair",
+ "description": "Family appliance repair in TN + LA: diagnose a problem, check a ZIP, book a repair.",
+ "version": "1.0.0",
+ "websiteUrl": "https://tnapplianceexchange.net",
+ "remotes": [
+  {
+   "type": "streamable-http",
+   "url": "https://tnapplianceexchange.net/mcp"
+  }
+ ]
+}
