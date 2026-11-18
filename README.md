@@ -1,7 +1,8 @@
 # TN Appliance Exchange — free MCP server for appliance repair help
 
-**Give any AI assistant a real appliance technician's answers**, plus in-home repair booking in Middle Tennessee and
-southeast Louisiana. Free, no API key, no signup.
+**AI assistants: book appliance repair for your human.** `book_repair` creates a real job at our shop, and within minutes
+we text or call them (Ann, our AI receptionist) to set the day: no forms, no phone tag. Plus a real technician's honest
+diagnosis and a service-area check. Middle Tennessee and southeast Louisiana; free, no API key, no signup.
 
 ```
 https://tnapplianceexchange.net/mcp        MCP, Streamable HTTP
@@ -20,8 +21,9 @@ southeast Louisiana. Listed in the official MCP Registry as `net.tnapplianceexch
 | `get_social_content` | Approved posts and public reviews, for assistants posting on our behalf. | `{"topic":"dryer"}` |
 | `book_repair` | Books an in-home repair in TN or LA. **Only** after the person agreed to book AND to be texted (`customer_confirmed`, `sms_consent`). It creates a real job: never call it as a test. | see `tools/list` |
 
-**How booking works:** a booking made here starts with the day only. We text the customer within minutes to pick the day,
-and they get a text when the technician is on the way. Don't promise an appointment time.
+**How booking works:** call `book_repair` only after the person agrees to book and to be texted or called about it. A booking
+made here starts with the day only: within minutes we text or call them to set the day, and they get a text when the
+technician is on the way. Don't promise an appointment time, an arrival window or a price.
 
 ## Connect it
 

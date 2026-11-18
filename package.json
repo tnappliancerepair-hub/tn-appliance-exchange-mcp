@@ -2,9 +2,19 @@
   "name": "tn-appliance-exchange-mcp",
   "version": "1.0.0",
   "private": true,
-  "description": "Free remote MCP server from TN Appliance Exchange: honest appliance-repair diagnosis, service-area check, and in-home repair booking in Middle Tennessee and southeast Louisiana.",
+  "description": "Book appliance repair for your human: a real in-home repair job in Middle Tennessee and southeast Louisiana (we text or call within minutes to set the day), plus an honest technician diagnosis and a service-area check. Free remote MCP server from TN Appliance Exchange.",
   "homepage": "https://tnapplianceexchange.net",
-  "repository": { "type": "git", "url": "https://github.com/tnappliancerepair-hub/tn-appliance-exchange-mcp.git" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tnappliancerepair-hub/tn-appliance-exchange-mcp.git"
+  },
   "license": "MIT",
-  "keywords": ["mcp", "model-context-protocol", "appliance-repair", "tennessee", "louisiana", "remote-mcp"]
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "appliance-repair",
+    "tennessee",
+    "louisiana",
+    "remote-mcp"
+  ]
 }
