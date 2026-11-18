@@ -1,0 +1,186 @@
+{
+  "author": "tnappliancerepair-hub",
+  "authorUrl": "https://github.com/tnappliancerepair-hub",
+  "cloudEndpoint": "https://tnapplianceexchange.net/mcp",
+  "description": "Free remote MCP server from TN Appliance Exchange: honest appliance-repair diagnosis, service-area check, and in-home repair booking in Middle Tennessee and southeast Louisiana.",
+  "homepage": "https://tnapplianceexchange.net",
+  "identifier": "tnappliancerepair-hub-tn-appliance-exchange-mcp",
+  "name": "TN Appliance Exchange — appliance repair",
+  "prompts": [],
+  "resources": [],
+  "tags": [
+    "mcp",
+    "model-context-protocol",
+    "appliance-repair",
+    "tennessee",
+    "louisiana",
+    "remote-mcp"
+  ],
+  "tools": [
+    {
+      "name": "get_business_info",
+      "title": "About TN Appliance Exchange",
+      "description": "Who TN Appliance Exchange is, where they serve, services, how booking works (by day, not time), and their honesty and safety policies.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "check_service_area",
+      "title": "Check service area",
+      "description": "Check whether a US zip code gets in-home appliance repair (Tennessee and Louisiana, except a few ZIPs we don't go to: Auburntown 37016, Castalian Springs 37031, Christiana 37037, Eagleville 37060, Shelbyville 37160). Anywhere else, returns the nationwide $50 video diagnostic option.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "zip": {
+            "type": "string",
+            "description": "5-digit US zip code"
+          }
+        },
+        "required": [
+          "zip"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "diagnose_appliance_problem",
+      "title": "Diagnose an appliance problem",
+      "description": "Honest troubleshooting from working appliance technicians, grounded in real completed repairs. Give the appliance and symptom (plus brand, model and any error code if known). Returns likely causes, what is safe to check, and safety warnings. Never returns part numbers.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "appliance": {
+            "type": "string",
+            "description": "e.g. washer, dryer, refrigerator, dishwasher, oven, range, microwave"
+          },
+          "symptom": {
+            "type": "string",
+            "description": "What is happening, in the person's words"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model number from the sticker, if known"
+          },
+          "error_code": {
+            "type": "string",
+            "description": "Code on the display, if any"
+          }
+        },
+        "required": [
+          "appliance",
+          "symptom"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "get_social_content",
+      "title": "Get approved social media content",
+      "description": "Approved material for Facebook / Instagram / Google posts about TN Appliance Exchange: ready-to-post press release blurbs with links, real 5-star Google reviews (first name + last initial), hashtags, profile links, and the brand rules every post must follow (no part numbers, no customer info, no appointment times, no \"best\" claims). Optional topic filter, e.g. \"dryer vent\", \"refrigerator\", \"Louisiana\".",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string",
+            "description": "Optional topic to filter by"
+          }
+        },
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "book_repair",
+      "title": "Book an in-home appliance repair",
+      "description": "Book an in-home repair in Tennessee or Louisiana. Only call after the person has agreed to book and to be texted. Creates the job and TN Appliance Exchange texts them within minutes to pick the day. Never promise an appointment time.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Mobile number that can receive texts"
+          },
+          "address": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string",
+            "description": "5-digit zip"
+          },
+          "appliance_type": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "model_number": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string",
+            "description": "What is wrong"
+          },
+          "availability": {
+            "type": "string",
+            "description": "Days that generally work, if they said"
+          },
+          "customer_confirmed": {
+            "type": "boolean",
+            "description": "true only if the person explicitly agreed to book"
+          },
+          "sms_consent": {
+            "type": "boolean",
+            "description": "true only if the person agreed to be texted about the repair"
+          }
+        },
+        "required": [
+          "first_name",
+          "phone",
+          "zip",
+          "appliance_type",
+          "problem",
+          "customer_confirmed",
+          "sms_consent"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    }
+  ],
+  "version": "1.0.0"
+}
