@@ -15,3 +15,6 @@ curl -s $H $MCP -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"nam
 
 # An honest technician's read on a problem (takes up to ~20 seconds)
 curl -s $H $MCP -d '{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"diagnose_appliance_problem","arguments":{"appliance":"dryer","symptom":"runs but no heat","brand":"Whirlpool"}}}'
+
+# The link where the person starts (and pays for) the $50 video Quick Check themselves (read-only; books nothing)
+curl -s $H $MCP -d '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"start_quick_check","arguments":{"appliance":"dryer","zip":"30301"}}}'
