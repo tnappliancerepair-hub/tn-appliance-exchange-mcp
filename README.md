@@ -19,11 +19,18 @@ southeast Louisiana. Listed in the official MCP Registry as `net.tnapplianceexch
 | `check_service_area` | Is a ZIP covered for in-home repair? Outside TN/LA it says so and offers a $50 video diagnostic. | `{"zip":"37013"}` |
 | `diagnose_appliance_problem` | An honest technician's read on a problem, safety first. Gas, refrigerant and electrical-hazard problems are pro-only. | `{"appliance":"dryer","symptom":"runs but no heat","brand":"Whirlpool"}` |
 | `get_social_content` | Approved posts and public reviews, for assistants posting on our behalf. | `{"topic":"dryer"}` |
-| `book_repair` | Books an in-home repair in TN or LA. **Only** after the person agreed to book AND to be texted (`customer_confirmed`, `sms_consent`). It creates a real job: never call it as a test. | see `tools/list` |
+| `book_repair` | Books an in-home repair in TN or LA. **Only** after the person agreed to book AND to be texted or called (`customer_confirmed`, `sms_consent`). It creates a real job: never call it as a test. | see `tools/list` |
 
 **How booking works:** call `book_repair` only after the person agrees to book and to be texted or called about it. A booking
 made here starts with the day only: within minutes we text or call them to set the day, and they get a text when the
 technician is on the way. Don't promise an appointment time, an arrival window or a price.
+
+**Not tools, on purpose:** to reschedule or cancel, the person replies to our text or calls/texts (629) 272-1234 (24/7); our
+team makes changes on that thread. The $50 video Quick Check (anywhere in the US) is started by the person at
+https://tnapplianceexchange.net/quick-check-intake.html, because it takes their payment there.
+
+Every tool publishes a full input description, an `outputSchema` and the full MCP annotation set (`readOnlyHint`,
+`destructiveHint`, `idempotentHint`, `openWorldHint`); `book_repair` is the only write tool and is not idempotent.
 
 ## Connect it
 
