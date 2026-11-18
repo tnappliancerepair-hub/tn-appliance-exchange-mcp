@@ -57,7 +57,7 @@ Examples, no packages needed (all read-only):
 - [`examples/python/check_zip.py`](examples/python/check_zip.py): `python3 check_zip.py 37013`.
 - [`examples/node/diagnose.mjs`](examples/node/diagnose.mjs): `node diagnose.mjs dryer "runs but no heat" Whirlpool`.
 
-For AI crawlers: [llms.txt](https://tnapplianceexchange.net/llms.txt).
+For AI crawlers: [llms.txt](https://tnapplianceexchange.net/llms.txt). Setting up in Cline or another agent: [llms-install.md](llms-install.md).
 
 ## Using it well
 
