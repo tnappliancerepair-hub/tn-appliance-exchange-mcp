@@ -48,6 +48,11 @@ Every tool publishes a full input description, an `outputSchema` and the full MC
 { "servers": { "tn-appliance-exchange": { "type": "http", "url": "https://tnapplianceexchange.net/mcp" } } }
 ```
 
+**Gemini CLI** (this repo is also a Gemini CLI extension, `gemini-extension.json`):
+```sh
+gemini extensions install https://github.com/tnappliancerepair-hub/tn-appliance-exchange-mcp
+```
+
 **Clients that only run local (stdio) servers:**
 ```json
 { "mcpServers": { "tn-appliance-exchange": { "command": "npx", "args": ["-y", "mcp-remote", "https://tnapplianceexchange.net/mcp"] } } }
